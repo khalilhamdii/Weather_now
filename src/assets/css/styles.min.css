@@ -3,7 +3,7 @@
 }
 
 html {
-  min-width: 550px;
+  min-width: 400px;
 }
 
 body {
@@ -14,18 +14,30 @@ body {
     ),
     url(../../assets/img/background.jpg) top no-repeat;
 }
-.h1,
+
 h1 {
   font-family: ABeeZee, sans-serif;
   color: #fff;
   text-align: center;
   font-size: 60px;
 }
+
+h2 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 25px;
+}
+
+span {
+  font-size: 20px;
+}
 .border.rounded-pill.shadow.form-control-lg.d-sm-flex.w-75.p-4.mt-5 {
   border-style: none;
   border-radius: 10px;
 }
-.btn.btn-warning.shadow-sm.mt-4.w-25 {
+.btn.btn-warning.shadow-sm.mt-4 {
   color: #fff;
   font-family: ABeeZee, sans-serif;
   background: rgba(255, 193, 7, 0.5);
@@ -43,4 +55,6 @@ h1 {
 
 .result {
   background-color: #e8eaf685;
+  border-radius: 10px;
+  display: none;
 }

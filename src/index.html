@@ -15,20 +15,21 @@
 <body>
   <div class="container-fluid d-flex flex-column align-items-center align-items-sm-center mt-5">
     <h1><i class="fa fa-cloud mr-2 text-light"></i>WeatherNow</h1><input
-      class="border rounded-pill shadow form-control-lg d-sm-flex w-75 p-4 mt-5" type="text" autocomplete="on"><button
-      class="btn btn-warning shadow-sm mt-4 w-25" data-bs-hover-animate="pulse" type="submit">SEARCH</button>
+      class="border rounded-pill shadow form-control-lg d-sm-flex w-75 p-4 mt-5" type="text"
+      placeholder="Please enter city name..."><button id="search-btn" class="btn btn-warning shadow-sm mt-4"
+      data-bs-hover-animate="pulse" type="submit">SEARCH</button>
 
-    <div class="result mt-5 w-75 mx-lg-5 p-4">
+    <div class="result mt-5 w-max-75 mx-lg-5 p-4">
       <!--Card content-->
       <div class="card-block text-white text-center">
         <!--Title-->
-        <h2 class="card-title m-b-2">Warsaw</h2>
-        <p>Sunny <small><span class="grey-text">&middot; Wind 5 mph &middot; Humidity: 47%</span></small></p>
+        <h2 class="card-title text-black-50 m-b-2"></h2>
+        <p class="description text-capitalize"></p>
+        <small><span class="text-black-50 wind"></span>
+          <span class="text-black-50 humidity"></span></small>
 
         <div class="row justify-content-center">
-          <div class="col-xs-6 today text-xs-center amber-text"><i class="fa fa-sun-o" aria-hidden="true"></i>
-          </div>
-          <div class="col-xs-6 today text-xs-center">14&deg;</div>
+          <div class="col-xs-6 today text-xs-center temp"></div>
         </div>
 
       </div>
