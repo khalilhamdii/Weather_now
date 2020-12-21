@@ -2,6 +2,10 @@
   outline: none;
 }
 
+html {
+  min-width: 550px;
+}
+
 body {
   background: linear-gradient(
       90deg,
@@ -27,4 +31,16 @@ h1 {
   background: rgba(255, 193, 7, 0.5);
   border-style: none;
   border-radius: 10px;
+}
+
+.today {
+  font-size: 6rem;
+  font-weight: 100;
+}
+.night {
+  font-weight: 300;
+}
+
+.result {
+  background-color: #e8eaf685;
 }

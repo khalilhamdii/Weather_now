@@ -6,17 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>WeatherNow</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arvo">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <link rel="stylesheet" href="assets/css/styles.min.css">
 </head>
 
 <body>
-  <div class="container d-flex flex-column align-items-center align-items-sm-center mt-5">
-    <h1><i class="fa fa-cloud mr-2"></i>WeatherNow</h1><input
+  <div class="container-fluid d-flex flex-column align-items-center align-items-sm-center mt-5">
+    <h1><i class="fa fa-cloud mr-2 text-light"></i>WeatherNow</h1><input
       class="border rounded-pill shadow form-control-lg d-sm-flex w-75 p-4 mt-5" type="text" autocomplete="on"><button
       class="btn btn-warning shadow-sm mt-4 w-25" data-bs-hover-animate="pulse" type="submit">SEARCH</button>
+
+    <div class="result mt-5 w-75 mx-lg-5 p-4">
+      <!--Card content-->
+      <div class="card-block text-white text-center">
+        <!--Title-->
+        <h2 class="card-title m-b-2">Warsaw</h2>
+        <p>Sunny <small><span class="grey-text">&middot; Wind 5 mph &middot; Humidity: 47%</span></small></p>
+
+        <div class="row justify-content-center">
+          <div class="col-xs-6 today text-xs-center amber-text"><i class="fa fa-sun-o" aria-hidden="true"></i>
+          </div>
+          <div class="col-xs-6 today text-xs-center">14&deg;</div>
+        </div>
+
+      </div>
+      <!--/.Card content-->
+
+    </div>
   </div>
 </body>
 
