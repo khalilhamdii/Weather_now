@@ -1,4 +1,29 @@
 const Weather = (() => {
+  const renderLoader = (status) => {
+    const loader = document.getElementById("loader-icon");
+    if (status) {
+      loader.classList.add("loader");
+    } else {
+      loader.classList.remove("loader");
+    }
+  };
+
+  const hideData = () => {
+    const result = document.querySelector(".result");
+
+    const cityName = document.querySelector(".card-title");
+    const cityTemp = document.querySelector(".temp");
+    const weatherDesc = document.querySelector(".description");
+    const wind = document.querySelector(".wind");
+    const humidity = document.querySelector(".humidity");
+
+    cityName.innerHTML = ``;
+    cityTemp.innerHTML = ``;
+    weatherDesc.innerHTML = ``;
+    wind.innerHTML = ``;
+    humidity.innerHTML = ``;
+    result.style.display = "none";
+  };
   const renderData = (
     tempValue,
     nameValue,
@@ -24,18 +49,12 @@ const Weather = (() => {
   };
 
   const renderError = () => {
+    hideData();
     const result = document.querySelector(".result");
     const cityName = document.querySelector(".card-title");
-    const cityTemp = document.querySelector(".temp");
-    const weatherDesc = document.querySelector(".description");
-    const wind = document.querySelector(".wind");
-    const humidity = document.querySelector(".humidity");
-    cityTemp.innerHTML = ``;
-    weatherDesc.innerHTML = ``;
-    wind.innerHTML = ``;
-    humidity.innerHTML = ``;
     cityName.innerHTML = "City name is wrong!";
     result.style.display = "inline-block";
+    renderLoader(false);
   };
   const getCityData = (city) => {
     fetch(
@@ -50,7 +69,7 @@ const Weather = (() => {
         let descValue = json["weather"][0]["description"];
         let windValue = json["wind"]["speed"];
         let humidityValue = json["main"]["humidity"];
-
+        renderLoader(false);
         renderData(tempValue, nameValue, descValue, windValue, humidityValue);
       })
       .catch(() => {
@@ -58,7 +77,7 @@ const Weather = (() => {
       });
   };
 
-  return { getCityData };
+  return { getCityData, renderLoader, hideData };
 })();
 
 export default Weather;

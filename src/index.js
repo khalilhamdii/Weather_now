@@ -10,5 +10,7 @@ importAll(require.context("./assets/js/", true, /\.js$/));
 const searchBtn = document.getElementById("search-btn");
 searchBtn.addEventListener("click", () => {
   const city = document.querySelector("input").value;
+  Weather.hideData();
+  Weather.renderLoader(true);
   Weather.getCityData(city);
 });
