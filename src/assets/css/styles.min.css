@@ -15,6 +15,20 @@ body {
     url(../../assets/img/background.jpg) top no-repeat;
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: -webkit-linear-gradient(330deg, #fb3 0%, #ff744e 100%);
+  background-image: linear-gradient(120deg, #ff6a41 0%, #fb3 100%);
+}
+
 h1 {
   font-family: ABeeZee, sans-serif;
   color: #fff;
@@ -32,6 +46,11 @@ p {
 
 span {
   font-size: 20px;
+}
+
+sup {
+  font-size: 50%;
+  top: -0.8em;
 }
 .border.rounded-pill.shadow.form-control-lg.d-sm-flex.w-75.p-4.mt-5 {
   border-style: none;
@@ -57,33 +76,4 @@ span {
   background-color: #e8eaf685;
   border-radius: 10px;
   display: none;
-}
-
-.loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #fc9d31;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 2s linear infinite;
-}
-
-/* Safari */
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }

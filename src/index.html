@@ -16,10 +16,20 @@
   <div class="container-fluid d-flex flex-column align-items-center align-items-sm-center mt-5">
     <h1><i class="fa fa-cloud mr-2 text-light"></i>WeatherNow</h1><input
       class="border rounded-pill shadow form-control-lg d-sm-flex w-75 p-4 mt-5" type="text"
-      placeholder="Please enter city name..."><button id="search-btn" class="btn btn-warning shadow-sm mt-4"
-      data-bs-hover-animate="pulse" type="submit">SEARCH</button>
+      placeholder="Please enter city name...">
+    <div class="row mt-3 justify-content-between text-white">
+      <span>Imperial</span>
+      <label class="switch mx-2 font-weight-bold">
+        <input id="unit-check" type="checkbox" checked>
+        <span class="slider round"></span>
+      </label>
+      <span>Metric</span>
+    </div>
+    <button id="search-btn" class="btn btn-warning shadow-sm mt-4" data-bs-hover-animate="pulse"
+      type="submit">SEARCH</button>
+
     <div id="loader-icon" class="mt-2"></div>
-    <div class="result mt-5 w-max-75 mx-lg-5 p-4">
+    <div class="result mt-2 mb-5 w-max-75 mx-lg-5 p-4">
 
       <!--Card content-->
       <div class="card-block text-white text-center">
