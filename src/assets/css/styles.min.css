@@ -1,0 +1,30 @@
+*:focus {
+  outline: none;
+}
+
+body {
+  background: linear-gradient(
+      90deg,
+      rgba(58, 65, 250, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(../../assets/img/background.jpg) top no-repeat;
+}
+.h1,
+h1 {
+  font-family: ABeeZee, sans-serif;
+  color: #fff;
+  text-align: center;
+  font-size: 60px;
+}
+.border.rounded-pill.shadow.form-control-lg.d-sm-flex.w-75.p-4.mt-5 {
+  border-style: none;
+  border-radius: 10px;
+}
+.btn.btn-warning.shadow-sm.mt-4.w-25 {
+  color: #fff;
+  font-family: ABeeZee, sans-serif;
+  background: rgba(255, 193, 7, 0.5);
+  border-style: none;
+  border-radius: 10px;
+}
