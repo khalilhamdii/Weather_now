@@ -1,14 +1,10 @@
-# Restaurant Page
+# WeatherNow
 
 ![Microverse](https://img.shields.io/badge/-Microverse-6F23FF?style=for-the-badge)
 
 ## Description
 
-In this project, I have created a web page of a local restaurant from where I live. I have built it using javascript & Webpack. This web page contains three tabs :
-
-- A home page.
-- A service page.
-- A visit-us page.
+WeatherNow is a web application where a user can input any city name and get all weather information about that particular city. A user can chose between "Metric" or "Imperial" units for the weather data displayed. This webApp was built with javascript, bundled with Webpack along with the integration of "OpenWeatherMap" API.
 
 ## Library Directory 📙
 
@@ -22,7 +18,7 @@ In this project, I have created a web page of a local restaurant from where I li
 
 ## Live Demo
 
-[Live demo](https://khalilhamdii.github.io/Restaurant_page/)
+[Live demo](https://khalilhamdii.github.io/Weather_now/)
 
 ## Screenshot
 
@@ -31,9 +27,11 @@ In this project, I have created a web page of a local restaurant from where I li
 ## Built With 🛠
 
 ```
-- Javascript
 - HTML/CSS
 - MDBoostrap
+- Javascript
+- Webpack
+- OpenWeatherMap API
 - VS Code
 ```
 
