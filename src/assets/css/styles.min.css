@@ -6,16 +6,6 @@ html {
   min-width: 400px;
 }
 
-body {
-  background:
-    linear-gradient(
-      90deg,
-      rgba(58, 65, 250, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url(../../assets/img/background.jpg) top no-repeat;
-}
-
 ::-webkit-scrollbar {
   width: 12px;
 }
