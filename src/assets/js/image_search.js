@@ -1,11 +1,12 @@
 /* eslint-disable consistent-return */
 const ImageSearch = (() => {
-  const fetchImage = (city) => fetch(
-    `http://api.serpstack.com/search?access_key=36075f4c717caf4f68494580b493ca42&query="${city} tourism"&type=images&images_size=medium`,
-    {
-      mode: 'cors',
-    },
-  ).then((response) => response.json());
+  const fetchImage = (city) =>
+    fetch(
+      `https://api.serpstack.com/search?access_key=36075f4c717caf4f68494580b493ca42&query="${city} tourism"&type=images&images_size=medium`,
+      {
+        mode: "cors",
+      }
+    ).then((response) => response.json());
 
   const imgLink = (city) => {
     if (city.length > 0) {
@@ -20,8 +21,8 @@ const ImageSearch = (() => {
       rgba(255, 255, 255, 0.5)
     ), url(${img}) no-repeat`;
 
-    document.body.style.backgroundSize = 'cover';
-    document.body.style.backgroundAttachment = 'fixed';
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed";
   };
 
   return { imgLink, bodyBg };
