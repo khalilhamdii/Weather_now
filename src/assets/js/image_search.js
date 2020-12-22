@@ -15,9 +15,9 @@ const ImageSearch = (() => {
       90deg,
       rgba(58, 65, 250, 0.5),
       rgba(255, 255, 255, 0.5)
-    ), url(${img}) no-repeat`;
+    ), url(${img}) top no-repeat`;
 
-    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundSize = 'auto';
   };
 
   return { imgLink, bodyBg };
