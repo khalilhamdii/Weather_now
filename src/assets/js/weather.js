@@ -1,6 +1,9 @@
 const Weather = (() => {
   const fetchData = (city, unit) => fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=91001467aeb7419891af974f808d8f93`,
+    {
+      mode: 'cors',
+    },
   ).then((response) => response.json());
 
   const renderLoader = (status) => {

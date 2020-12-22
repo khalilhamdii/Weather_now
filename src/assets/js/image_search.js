@@ -2,6 +2,9 @@
 const ImageSearch = (() => {
   const fetchImage = (city) => fetch(
     `http://api.serpstack.com/search?access_key=36075f4c717caf4f68494580b493ca42&query="${city} tourism"&type=images&images_size=medium`,
+    {
+      mode: 'cors',
+    },
   ).then((response) => response.json());
 
   const imgLink = (city) => {
@@ -15,9 +18,10 @@ const ImageSearch = (() => {
       90deg,
       rgba(58, 65, 250, 0.5),
       rgba(255, 255, 255, 0.5)
-    ), url(${img}) top no-repeat`;
+    ), url(${img}) no-repeat`;
 
-    document.body.style.backgroundSize = 'auto';
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundAttachment = 'fixed';
   };
 
   return { imgLink, bodyBg };
