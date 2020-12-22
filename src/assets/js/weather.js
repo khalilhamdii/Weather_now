@@ -1,4 +1,10 @@
 const Weather = (() => {
+  const fetchData = (city, unit) => {
+    return fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=91001467aeb7419891af974f808d8f93`
+    ).then((response) => response.json());
+  };
+
   const renderLoader = (status) => {
     const loader = document.getElementById("loader-icon");
     if (status) {
@@ -78,10 +84,7 @@ const Weather = (() => {
     renderLoader(false);
   };
   const getCityData = (city, unit) => {
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=91001467aeb7419891af974f808d8f93`
-    )
-      .then((response) => response.json())
+    fetchData(city, unit)
       .then((json) => {
         const tempValue = json.main.temp;
         const nameValue = json.name;
@@ -91,9 +94,7 @@ const Weather = (() => {
         renderLoader(false);
         renderData(tempValue, nameValue, descValue, windValue, humidityValue);
       })
-      .catch(() => {
-        renderError();
-      });
+      .catch(() => renderError());
   };
 
   return {
