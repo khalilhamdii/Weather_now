@@ -2,10 +2,7 @@
 const ImageSearch = (() => {
   const fetchImage = (city) =>
     fetch(
-      `https://api.serpstack.com/search?access_key=36075f4c717caf4f68494580b493ca42&query="${city} tourism"&type=images&images_size=medium`,
-      {
-        mode: "cors",
-      }
+      `http://api.serpstack.com/search?access_key=36075f4c717caf4f68494580b493ca42&query="${city} tourism"&type=images&images_size=medium`
     ).then((response) => response.json());
 
   const imgLink = (city) => {

@@ -1,87 +1,85 @@
 const Weather = (() => {
-  const fetchData = (city, unit) => fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=91001467aeb7419891af974f808d8f93`,
-    {
-      mode: 'cors',
-    },
-  ).then((response) => response.json());
+  const fetchData = (city, unit) =>
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=91001467aeb7419891af974f808d8f93`
+    ).then((response) => response.json());
 
   const renderLoader = (status) => {
-    const loader = document.getElementById('loader-icon');
+    const loader = document.getElementById("loader-icon");
     if (status) {
-      loader.classList.add('loader');
+      loader.classList.add("loader");
     } else {
-      loader.classList.remove('loader');
+      loader.classList.remove("loader");
     }
   };
 
   const getUnit = () => {
-    const unit = document.getElementById('unit-check');
+    const unit = document.getElementById("unit-check");
     if (unit.checked) {
-      return 'metric';
+      return "metric";
     }
-    return 'imperial';
+    return "imperial";
   };
 
   const tempUnit = () => {
-    const unit = document.getElementById('unit-check');
+    const unit = document.getElementById("unit-check");
     if (unit.checked) {
-      return '<sup>&deg;C</sup>';
+      return "<sup>&deg;C</sup>";
     }
-    return '<sup>&deg;F</sup>';
+    return "<sup>&deg;F</sup>";
   };
 
   const windUnit = () => {
-    const unit = document.getElementById('unit-check');
+    const unit = document.getElementById("unit-check");
     if (unit.checked) {
-      return ' kmh &middot;';
+      return " kmh &middot;";
     }
-    return ' mph &middot;';
+    return " mph &middot;";
   };
 
   const resetData = () => {
-    const result = document.querySelector('.result');
-    const cityName = document.querySelector('.card-title');
-    const cityTemp = document.querySelector('.temp');
-    const weatherDesc = document.querySelector('.description');
-    const wind = document.querySelector('.wind');
-    const humidity = document.querySelector('.humidity');
+    const result = document.querySelector(".result");
+    const cityName = document.querySelector(".card-title");
+    const cityTemp = document.querySelector(".temp");
+    const weatherDesc = document.querySelector(".description");
+    const wind = document.querySelector(".wind");
+    const humidity = document.querySelector(".humidity");
 
-    cityName.innerHTML = '';
-    cityTemp.innerHTML = '';
-    weatherDesc.innerHTML = '';
-    wind.innerHTML = '';
-    humidity.innerHTML = '';
-    result.style.display = 'none';
+    cityName.innerHTML = "";
+    cityTemp.innerHTML = "";
+    weatherDesc.innerHTML = "";
+    wind.innerHTML = "";
+    humidity.innerHTML = "";
+    result.style.display = "none";
   };
   const renderData = (
     tempValue,
     nameValue,
     descValue,
     windValue,
-    humidityValue,
+    humidityValue
   ) => {
-    const result = document.querySelector('.result');
-    const cityName = document.querySelector('.card-title');
-    const cityTemp = document.querySelector('.temp');
-    const weatherDesc = document.querySelector('.description');
-    const wind = document.querySelector('.wind');
-    const humidity = document.querySelector('.humidity');
+    const result = document.querySelector(".result");
+    const cityName = document.querySelector(".card-title");
+    const cityTemp = document.querySelector(".temp");
+    const weatherDesc = document.querySelector(".description");
+    const wind = document.querySelector(".wind");
+    const humidity = document.querySelector(".humidity");
 
     cityName.innerHTML = nameValue;
     cityTemp.innerHTML = `${tempValue}${tempUnit()}`;
     weatherDesc.innerHTML = descValue;
     wind.innerHTML = `Wind: ${windValue}${windUnit()}`;
     humidity.innerHTML = `Humidity: ${humidityValue}%`;
-    result.style.display = 'inline-block';
+    result.style.display = "inline-block";
   };
 
   const renderError = () => {
     resetData();
-    const result = document.querySelector('.result');
-    const cityName = document.querySelector('.card-title');
-    cityName.innerHTML = 'City name is wrong!';
-    result.style.display = 'inline-block';
+    const result = document.querySelector(".result");
+    const cityName = document.querySelector(".card-title");
+    cityName.innerHTML = "City name is wrong!";
+    result.style.display = "inline-block";
     renderLoader(false);
   };
   const getCityData = (city, unit) => {
