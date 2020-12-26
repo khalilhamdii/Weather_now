@@ -4,7 +4,7 @@
 
 ## Description
 
-WeatherNow is a web application where a user can input any city name and get all weather information about that particular city. A user can chose between "Metric" or "Imperial" units for the weather data displayed. This webApp was built with javascript, bundled with Webpack along with the integration of "OpenWeatherMap" API.
+WeatherNow is a web application where a user can input any city name and get all weather information about that particular city. A user can chose between "Metric" or "Imperial" units for the weather data displayed. This webApp was built with javascript, bundled with Webpack along with the integration of two APIs : "OpenWeatherMap" and "Unsplash".
 
 ## Library Directory 📙
 
