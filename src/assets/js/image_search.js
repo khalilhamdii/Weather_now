@@ -2,12 +2,12 @@
 const ImageSearch = (() => {
   const fetchImage = (city) =>
     fetch(
-      `http://api.serpstack.com/search?access_key=36075f4c717caf4f68494580b493ca42&query="${city} tourism"&type=images&images_size=medium`
+      `https://api.unsplash.com/search/photos?page=1&query="${city} landscape"&orientation=landscape&per_page=1&client_id=_Icg2UQ8IkX1mbHiRXvGgX5by5rfy13ncjpH--5-DX8`
     ).then((response) => response.json());
 
   const imgLink = (city) => {
     if (city.length > 0) {
-      return fetchImage(city).then((json) => json.image_results[0].image_url);
+      return fetchImage(city).then((json) => json.results[0].urls.regular);
     }
   };
 
@@ -22,7 +22,7 @@ const ImageSearch = (() => {
     document.body.style.backgroundAttachment = "fixed";
   };
 
-  return { imgLink, bodyBg };
+  return { imgLink, bodyBg, fetchImage };
 })();
 
 export default ImageSearch;
